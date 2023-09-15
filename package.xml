@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+
+  <name>real_move_ros2_interfaces</name>
+  <version>0.12.0</version>
+  <description>Contains action, message and service definitions used in Real-Move project.</description>
+
+  <maintainer email="luca.fortini@iit.it">Luca Fortini</maintainer>
+  <maintainer email="mattia.leonori@iit.it">Mattia Leonori</maintainer>
+
+  <license>MIT</license>
+
+  <author email="luca.fortini@iit.it">Luca Fortini</author>
+  <author email="mattia.leonori@iit.it">Mattia Leonori</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <!-- <ros1_bridge mapping_rules="mapping_rules.yaml"/> -->
+  </export>
+</package>
