@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-
-project(real_move_ros2_interfaces)
+project(realmove_ros2_interfaces)
 
 # Default to C++17
 if(NOT CMAKE_CXX_STANDARD)

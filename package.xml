@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
 
-  <name>real_move_ros2_interfaces</name>
+  <name>realmove_ros2_interfaces</name>
   <version>0.0.1</version>
   <description>This ROS 2 package contains all interfaces (messages, services, actions, etc.) related to Real-Move project</description>
 
