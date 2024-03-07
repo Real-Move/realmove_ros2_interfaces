@@ -24,6 +24,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Keypoint.msg"
   "msg/Skeleton.msg"
   "msg/SkeletonArray.msg"
+  "msg/Object.msg"
+  "msg/ObjetcArray.msg"
 
   # "srv/<your_service.srv>"
   DEPENDENCIES builtin_interfaces 
