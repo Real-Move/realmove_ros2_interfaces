@@ -20,16 +20,18 @@ find_package(geometry_msgs REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   # "action/<your_action>.action"
 
-  # "msg/<your_message>.msg"
   "msg/Keypoint.msg"
   "msg/Skeleton.msg"
   "msg/SkeletonArray.msg"
 
-  # "srv/<your_service.srv>"
-  DEPENDENCIES builtin_interfaces 
+  "srv/String.srv"
+
+  DEPENDENCIES 
+    builtin_interfaces 
     std_msgs
     geometry_msgs 
-  # ADD_LINTER_TESTS
+
+  ADD_LINTER_TESTS
 )
 
 # This file defines mappings between ROS 1 and ROS 2 interfaces.
