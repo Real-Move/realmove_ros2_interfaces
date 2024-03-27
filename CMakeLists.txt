@@ -23,6 +23,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Keypoint.msg"
   "msg/Skeleton.msg"
   "msg/SkeletonArray.msg"
+  "msg/Object.msg"
+  "msg/ObjectArray.msg"
 
   "srv/String.srv"
 
