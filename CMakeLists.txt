@@ -18,13 +18,15 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  # "action/<your_action>.action"
 
+  "msg/ArucoMarker.msg"
+  "msg/ArucoMarkerArray.msg"
   "msg/Keypoint.msg"
   "msg/Skeleton.msg"
   "msg/SkeletonArray.msg"
   "msg/Object.msg"
   "msg/ObjectArray.msg"
+  
 
   "srv/String.srv"
 
