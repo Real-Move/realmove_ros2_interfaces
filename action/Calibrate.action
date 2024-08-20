@@ -1,0 +1,11 @@
+# Request
+std_msgs/Header header
+int32 aruco_detection_max_limit
+---
+# Result
+bool success
+string message
+---
+# Feedback
+int32 aruco_detection_size
+float32 progress_percentage
