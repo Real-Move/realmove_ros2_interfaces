@@ -1,3 +1,5 @@
 std_msgs/Header header
+Keypoint[] bbox
 Keypoint[] points
-geometry_msgs/Pose pose
+int32 class_id
+string class_name
