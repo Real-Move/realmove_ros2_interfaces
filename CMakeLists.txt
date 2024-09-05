@@ -19,7 +19,6 @@ find_package(geometry_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/Calibrate.action"
-
   "msg/ArucoMarker.msg"
   "msg/ArucoMarkerArray.msg"
   "msg/Keypoint.msg"
@@ -27,7 +26,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SkeletonArray.msg"
   "msg/Object.msg"
   "msg/ObjectArray.msg"
-
+  "msg/SkeletonDescriptionArray.msg"
   "srv/String.srv"
 
   DEPENDENCIES 
