@@ -26,8 +26,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SkeletonArray.msg"
   "msg/Object.msg"
   "msg/ObjectArray.msg"
-  "msg/Object3D.msg"
-  "msg/ObjectArray3D.msg"
   "msg/SkeletonDescriptionArray.msg"
   "srv/String.srv"
 
