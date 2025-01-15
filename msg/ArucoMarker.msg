@@ -1,11 +1,11 @@
 int32 id
 
 # Vertices
-int32 x0
-int32 y0
-int32 x1
-int32 y1
-int32 x2
-int32 y2
-int32 x3
-int32 y3
+float64 x0
+float64 y0
+float64 x1
+float64 y1
+float64 x2
+float64 y2
+float64 x3
+float64 y3
