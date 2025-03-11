@@ -1,4 +1,5 @@
-std_msgs/UInt8 skeleton_id
-std_msgs/UInt8 window_size
-std_msgs/UInt8 action_idx
-std_msgs/Float32 score
+uint16 skeleton_id
+uint16 window_size
+uint16 action_idx
+string action_name
+float32 score
