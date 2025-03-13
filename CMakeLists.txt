@@ -29,6 +29,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SkeletonDescriptionArray.msg"
   "msg/Action.msg"
   "msg/ActionArray.msg"
+  "msg/ActionAnalysis.msg"
+  "msg/ActionAnalysisArray.msg"
   "srv/String.srv"
 
   DEPENDENCIES 
