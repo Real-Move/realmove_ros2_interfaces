@@ -3,4 +3,4 @@ string action_name
 uint16 repetition_number
 builtin_interfaces/Time start
 builtin_interfaces/Time end
-bool feedback
+ActionFeedback[] feedback
