@@ -34,6 +34,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ActionFeedback.msg"
   "msg/Identity.msg"
   "msg/IdentityArray.msg"
+  "msg/GymRepetition.msg"
+  "msg/GymSet.msg"
+  "msg/GymSetArray.msg"
   "srv/String.srv"
 
   DEPENDENCIES 
