@@ -34,10 +34,13 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ActionFeedback.msg"
   "msg/Identity.msg"
   "msg/IdentityArray.msg"
+  "msg/GymIdentity.msg"
+  "msg/GymIdentityArray.msg"
   "msg/GymSet.msg"
   "msg/GymWorkout.msg"
   "srv/String.srv"
-  "srv/WriteWorkoutInfoService.srv"
+  "srv/GymUserRecognition.srv"
+  "srv/WriteWorkoutInfo.srv"
 
   DEPENDENCIES 
     builtin_interfaces 
