@@ -1,2 +1,2 @@
-std_msgs/UInt8 id
+uint16 id
 string name
