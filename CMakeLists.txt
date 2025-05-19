@@ -40,7 +40,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/GymWorkout.msg"
   "srv/String.srv"
   "srv/GymUserRecognition.srv"
+  "srv/ReadUserWorkout.srv"
   "srv/WriteWorkoutInfo.srv"
+  "srv/StopWorkout.srv"
 
   DEPENDENCIES 
     builtin_interfaces 
