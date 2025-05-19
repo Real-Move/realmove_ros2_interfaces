@@ -1,5 +1,4 @@
-uint16 user_id
-uint16 workout_id
+GymIdentity identity
 GymSet[] sets
 ---
 bool ack
