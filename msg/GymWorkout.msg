@@ -1,3 +1,3 @@
-uint16 user_id
+string user_code
 uint16 workout_id
 GymSet[] sets
