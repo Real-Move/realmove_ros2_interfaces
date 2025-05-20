@@ -1,4 +1,0 @@
-string user_code
-uint16 skeleton_id
-string user_name
-uint16 workout_id
