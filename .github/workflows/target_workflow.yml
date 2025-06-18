@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
-          repo_owner="Real-Move2" 
+          repo_owner="Real-Move" 
           repo_name="realmove-containers"  
           event_type="trigger-realmove-ros2-interfaces-workflow"
   
