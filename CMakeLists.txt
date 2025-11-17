@@ -16,6 +16,7 @@ find_package(rosidl_default_generators REQUIRED)
 # Interfaces dependencies
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/Calibrate.action"
@@ -27,6 +28,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Object.msg"
   "msg/ObjectArray.msg"
   "msg/SkeletonDescriptionArray.msg"
+  "msg/SkeletonJointStateArray.msg"
   "msg/Action.msg"
   "msg/ActionArray.msg"
   "msg/ActionAnalysis.msg"
@@ -39,7 +41,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   DEPENDENCIES 
     builtin_interfaces 
     std_msgs
-    geometry_msgs 
+    geometry_msgs
+    sensor_msgs
 
   ADD_LINTER_TESTS
 )
