@@ -4,11 +4,44 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_testing:
-    runs-on: ubuntu-22.04
+  build-deb:
+    runs-on: ubuntu-latest
+    container:
+      # Match this to your ROS distro (e.g., ros:humble-ros-core)
+      image: ros:humble-ros-core
+    
     steps:
-      - uses: jspricke/ros-deb-builder-action@main
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Build Tools
+        run: |
+          apt-get update && apt-get install -y \
+            python3-bloom \
+            python3-rosdep \
+            fakeroot \
+            dpkg-dev \
+            debhelper
+
+      - name: Initialize rosdep
+        run: |
+          rosdep update
+          # Install dependencies listed in your package.xml
+          apt-get update
+          rosdep install --from-paths . --ignore-src -y
+
+      - name: Generate Debian Source
+        run: |
+          # Bloom creates the 'debian' folder based on your package.xml
+          bloom-generate rosdebian --os-name ubuntu --os-version jammy --ros-distro humble
+
+      - name: Build Binary Package
+        run: |
+          # Build the .deb file
+          fakeroot debian/rules binary
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          ROS_DISTRO: humble
-          DEB_DISTRO: jammy
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: ros-debian-package
+          path: ../*.deb
