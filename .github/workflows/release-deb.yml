@@ -2,8 +2,12 @@ name: Build and Release Debian
 
 on:
   push:
-    tags: [ 'v*' ]
+    tags: [ "v*" ]
   workflow_dispatch:
+
+env:
+  ROS_DISTRO: humble          
+  UBUNTU_CODENAME: jammy      
 
 jobs:
   build-deb:
@@ -37,7 +41,8 @@ jobs:
         run: |
           # Bloom creates the 'debian' folder based on your package.xml
           CLEAN_VERSION=$(echo ${{ github.ref_name }} | sed 's/^v//')
-          bloom-generate rosdebian --os-name ubuntu --os-version jammy --ros-distro humble --version $CLEAN_VERSION
+          echo "Processing version: $CLEAN_VERSION"
+          bloom-generate rosdebian --os-name ubuntu --os-version $UBUNTU_CODENAME --ros-distro $ROS_DISTRO --version "$CLEAN_VERSION"
 
       - name: Build Binary Package
         run: |
