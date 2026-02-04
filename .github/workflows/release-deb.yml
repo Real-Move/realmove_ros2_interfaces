@@ -39,10 +39,9 @@ jobs:
 
       - name: Generate Debian Source
         run: |
-          # Bloom creates the 'debian' folder based on your package.xml
           CLEAN_VERSION=$(echo ${{ github.ref_name }} | sed 's/^v//')
           echo "Processing version: $CLEAN_VERSION"
-          bloom-generate rosdebian --os-name ubuntu --os-version $UBUNTU_CODENAME --ros-distro $ROS_DISTRO --version "$CLEAN_VERSION"
+          bloom-generate rosdebian --os-name ubuntu --os-version "$UBUNTU_CODENAME" --ros-distro "$ROS_DISTRO" --version "$CLEAN_VERSION"
 
       - name: Build Binary Package
         run: |
