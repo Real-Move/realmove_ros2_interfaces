@@ -7,9 +7,8 @@ jobs:
   build-deb:
     runs-on: ubuntu-latest
     container:
-      # Match this to your ROS distro (e.g., ros:humble-ros-core)
       image: ros:humble-ros-core
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -25,9 +24,7 @@ jobs:
 
       - name: Initialize rosdep
         run: |
-          if [ ! -d /etc/ros/rosdep/sources.list.d ]; then
-            rosdep init
-          fi
+          rosdep init || true
           rosdep update
           apt-get update
           rosdep install --from-paths . --ignore-src -y
@@ -41,9 +38,17 @@ jobs:
         run: |
           # Build the .deb file
           fakeroot debian/rules binary
+          mkdir -p artifacts
+          mv ../*.deb ./artifacts/
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ros-debian-package
-          path: ../*.deb
+          path: artifacts/*.deb
+      
+      - name: Upload to GitHub Release (tags only)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/*.deb
