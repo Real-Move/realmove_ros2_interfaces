@@ -1,0 +1,4 @@
+uint8 skeleton_id
+---
+bool success
+string message

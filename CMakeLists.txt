@@ -37,6 +37,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Identity.msg"
   "msg/IdentityArray.msg"
   "srv/String.srv"
+  "srv/ResetSkeletonScaling.srv"
 
   DEPENDENCIES 
     builtin_interfaces 
