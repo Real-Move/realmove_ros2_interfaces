@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(realmove_ros2_interfaces)
 
 # Default to C++17
@@ -36,6 +36,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ActionFeedback.msg"
   "msg/Identity.msg"
   "msg/IdentityArray.msg"
+  "msg/HighKneesRun.msg"
   "srv/String.srv"
   "srv/ResetSkeletonScaling.srv"
 
