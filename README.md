@@ -1,4 +1,4 @@
-# Real-Move ROS 2 Interfaces Catalog
+# Real-Move ROS 2 Interfaces 
 This ROS 2 package contains all interfaces (messages, services, actions, etc.) related to Real-Move project.
 
 ## Actions

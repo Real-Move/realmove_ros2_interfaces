@@ -6,23 +6,18 @@ on:
     branches:
       - main
       - devel
+    paths:
+      - action/**
+      - msg/**
+      - srv/**
 
 jobs:
   trigger:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Trigger Workflow in Another Repository
-        run: |
-          repo_owner="Real-Move" 
-          repo_name="realmove-containers"  
-          event_type="trigger-realmove-ros2-interfaces-workflow"
-          branch_name="${{ github.ref_name }}" # Dynamically use the branch name
-
-          curl -L \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.TRIGGER_TARGET_PAT }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/$repo_owner/$repo_name/dispatches \
-            -d "{\"event_type\": \"$event_type\", \"client_payload\": {\"branch_name\": \"$branch_name\"}}"
+    uses: Real-Move/realmove-actions/.github/workflows/reusable-trigger-target-workflow.yml@main
+    with:
+      repo_owner: Real-Move
+      repo_name: realmove-containers
+      event_type: trigger-realmove-ros2-interfaces-workflow
+      branch_name: ${{ github.ref_name }} 
+    secrets:
+      TRIGGER_TARGET_PAT: ${{ secrets.TRIGGER_TARGET_PAT }}
