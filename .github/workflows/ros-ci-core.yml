@@ -6,9 +6,10 @@ on:
     paths-ignore:
       - '.clang-format'
       - '.docker/**'
-      - 'deps.repos'
       - '.github/workflows/add-opened-issue-to-project.yml'
       - '.github/workflows/notify-unlabeled-issue.yml'
+      - '.github/workflows/release-deb.yml'
+      - '.github/workflows/target_workflow.yml'
       - '.gitignore'
       - '.pre-commit-config.yaml'
       - '.pre-commit/**'
@@ -23,9 +24,10 @@ on:
     paths-ignore:
       - '.clang-format'
       - '.docker/**'
-      - 'deps.repos'
       - '.github/workflows/add-opened-issue-to-project.yml'
       - '.github/workflows/notify-unlabeled-issue.yml'
+      - '.github/workflows/release-deb.yml'
+      - '.github/workflows/target_workflow.yml'
       - '.gitignore'
       - '.pre-commit-config.yaml'
       - '.pre-commit/**'
