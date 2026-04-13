@@ -48,7 +48,6 @@ jobs:
     with:
       ros_distro: humble
       workspace_mode: deps
-      deps_repos_file: deps.repos
       skip_tests: false
       skip_rosdep_install: false
       rosdep_check: false
