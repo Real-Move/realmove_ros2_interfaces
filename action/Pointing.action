@@ -1,0 +1,8 @@
+# Goal
+---
+# Result
+realmove_ros2_interfaces/Object selected_object
+---
+# Feedback
+float32 dwell_progress
+realmove_ros2_interfaces/Object current_target

@@ -14,11 +14,13 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 # Interfaces dependencies
+find_package(builtin_interfaces REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
+  "action/Pointing.action"
   "action/Calibrate.action"
   "msg/ArucoMarker.msg"
   "msg/ArucoMarkerArray.msg"
