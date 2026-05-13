@@ -39,6 +39,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Identity.msg"
   "msg/IdentityArray.msg"
   "msg/HighKneesRun.msg"
+  "msg/Log.msg"
   "srv/String.srv"
   "srv/ResetSkeletonScaling.srv"
 
