@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    uses: Real-Move/realmove-actions/.github/workflows/reusable-release-deb.yaml@main
+    uses: Real-Move/realmove-actions/.github/workflows/reusable-release-deb.yml@main
     with:
       ros_distro: humble
       ubuntu_codename: jammy
