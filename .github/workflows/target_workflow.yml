@@ -10,7 +10,15 @@ on:
       - action/**
       - msg/**
       - srv/**
-
+  pull_request:
+    branches:
+      - main
+      - devel
+    paths:
+      - action/**
+      - msg/**
+      - srv/**
+      
 jobs:
   trigger:
     uses: Real-Move/realmove-actions/.github/workflows/reusable-trigger-target-workflow.yml@main
@@ -18,6 +26,9 @@ jobs:
       repo_owner: Real-Move
       repo_name: realmove-containers
       event_type: trigger-realmove-ros2-interfaces-workflow
-      branch_name: ${{ github.ref_name }} 
+      branch_name: ${{ github.head_ref || github.ref_name }}
+      is_pull_request: ${{ github.event_name == 'pull_request' }}
+      source_repo: ${{ github.repository }}
+      source_sha: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
     secrets:
       TRIGGER_TARGET_PAT: ${{ secrets.TRIGGER_TARGET_PAT }}
