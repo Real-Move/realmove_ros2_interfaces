@@ -43,8 +43,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/String.srv"
   "srv/ResetSkeletonScaling.srv"
 
-  DEPENDENCIES 
-    builtin_interfaces 
+  DEPENDENCIES
+    builtin_interfaces
     std_msgs
     geometry_msgs
     sensor_msgs
