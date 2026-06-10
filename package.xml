@@ -3,13 +3,13 @@
 <package format="3">
 
   <name>realmove_ros2_interfaces</name>
-  <version>0.0.1</version>
+  <version>0.0.7</version>
   <description>This ROS 2 package contains all interfaces (messages, services, actions, etc.) related to Real-Move project</description>
 
   <maintainer email="luca.fortini@iit.it">Luca Fortini</maintainer>
   <maintainer email="mattia.leonori@iit.it">Mattia Leonori</maintainer>
 
-  <license>MIT</license>
+  <license>Proprietary</license>
 
   <author email="luca.fortini@iit.it">Luca Fortini</author>
   <author email="mattia.leonori@iit.it">Mattia Leonori</author>
@@ -24,6 +24,6 @@
 
   <export>
     <build_type>ament_cmake</build_type>
-    <!-- <ros1_bridge mapping_rules="mapping_rules.yaml"/> -->
+    <ros1_bridge mapping_rules="mapping_rules.yaml"/>
   </export>
 </package>

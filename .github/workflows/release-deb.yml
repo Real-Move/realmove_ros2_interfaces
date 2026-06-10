@@ -1,0 +1,22 @@
+name: Build and Release Debian
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: Real-Move/realmove-actions/.github/workflows/reusable-release-deb.yml@main
+    with:
+      ros_distro: humble
+      ubuntu_codename: jammy
+      container_image: osrf/ros:humble-desktop-full
+      artifact_name: ros-debian-package
+      apt_repo_url: https://hri.iit.it/packages
+      apt_repo_distribution: jammy
+      apt_repo_component: main
+      rosdep_yaml_url: https://hri.iit.it/packages/realmove.yaml
+      upload_release: true
+    secrets: inherit

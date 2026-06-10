@@ -1,1 +1,2 @@
-string[] skeleton_urdf_descriptions
+std_msgs/Header header
+string[] skeleton_descriptions
