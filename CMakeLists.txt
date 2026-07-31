@@ -42,6 +42,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Log.msg"
   "msg/Latency.msg"
   "msg/RecordSession.msg"
+  "msg/TestPoint.msg"
   "srv/String.srv"
   "srv/ResetSkeletonScaling.srv"
 

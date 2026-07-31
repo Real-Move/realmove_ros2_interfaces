@@ -1,0 +1,3 @@
+uint64 test_point_id
+builtin_interfaces/Time acquisition_stamp
+builtin_interfaces/Time test_point_stamp
