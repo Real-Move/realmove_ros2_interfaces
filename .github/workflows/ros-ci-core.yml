@@ -3,34 +3,29 @@ name: ROS CI Test Build • Core
 on:
   push:
     branches: [main, devel]
-    paths-ignore:
-      - '**/.clang-format'
-      - '.docker/**'
-      - '.github/**'
-      - '.gitignore'
-      - '.pre-commit-config.yaml'
-      - '.pre-commit/**'
-      - 'LICENSE'
-      - 'README.md'
-      - '**/*.md'
-      - 'change_name.py'
-      - 'commit.sh'
-      - 'pyproject.toml'
+    paths: &ros_ci_paths
+      - '**'
+      # Documentation and repository metadata.
+      - '!**/*.md'
+      - '!LICENSE'
+      - '!.gitignore'
+      - '!.codex/**'
+      # Formatting and pre-commit tooling (pyproject.toml currently only configures Ruff).
+      - '!.clang-format'
+      - '!.yamllint'
+      - '!pyproject.toml'
+      - '!.pre-commit-config*.yaml'
+      - '!.pre-commit/**'
+      # Developer helpers and Docker files are not used by this ROS build.
+      - '!.docker/**'
+      - '!change_name.py'
+      - '!commit.sh'
+      # Ignore other workflows, but always check changes to this one.
+      - '!.github/workflows/**'
+      - '.github/workflows/ros-ci-deps.yml'
   pull_request:
     branches: [main, devel]
-    paths-ignore:
-      - '**/.clang-format'
-      - '.docker/**'
-      - '.github/**'
-      - '.gitignore'
-      - '.pre-commit-config.yaml'
-      - '.pre-commit/**'
-      - 'LICENSE'
-      - 'README.md'
-      - '**/*.md'
-      - 'change_name.py'
-      - 'commit.sh'
-      - 'pyproject.toml'
+    paths: *ros_ci_paths
   workflow_dispatch:
 
 jobs:
